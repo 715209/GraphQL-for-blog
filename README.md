@@ -24,4 +24,4 @@ You can find the config file in `src/config/`
 
 ## Todo
 
-- [ ] Replace MySQL with a JSON file?
+- [ ] Add Join Monster
