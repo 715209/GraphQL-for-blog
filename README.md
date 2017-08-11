@@ -1,6 +1,6 @@
 # GraphQL-for-blog
 
-A project to learn how GraphQL works.
+A project I made for myself to learn how GraphQL works.
 
 ## Prerequisities
 
@@ -24,4 +24,5 @@ You can find the config file in `src/config/`
 
 ## Todo
 
-- [ ] Add Join Monster
+- [x] Add Join Monster
+- [ ] Authentication
