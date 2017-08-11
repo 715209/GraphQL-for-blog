@@ -1,11 +1,15 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
-import { makeExecutableSchema } from 'graphql-tools';
+// Packages
+import express from "express";
+import bodyParser from "body-parser";
+import { graphiqlExpress, graphqlExpress } from "apollo-server-express";
+import { makeExecutableSchema } from "graphql-tools";
+import joinMonsterAdapt from "join-monster-graphql-tools-adapter";
 
-import typeDefs from './src/graphql/schema';
-import resolvers from './src/graphql/resolvers';
-import models from './src/models';
+// Files
+import typeDefs from "./src/graphql/schema";
+import resolvers from "./src/graphql/resolvers";
+import models from "./src/models";
+import joinMonsterMetaData from "./src/config/joinMonsterMetaData"
 
 const app = express();
 
@@ -14,15 +18,17 @@ const schema = makeExecutableSchema({
     resolvers
 });
 
+joinMonsterAdapt(schema, joinMonsterMetaData);
+
 app.use(
-    '/graphiql',
+    "/graphiql",
     graphiqlExpress({
-        endpointURL: '/graphql',
+        endpointURL: "/graphql",
     })
 );
 
 app.use(
-    '/graphql',
+    "/graphql",
     bodyParser.json(),
     graphqlExpress({
         schema,

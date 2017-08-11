@@ -23,6 +23,8 @@
     "express": "^4.15.4",
     "graphql": "^0.10.5",
     "graphql-tools": "^1.1.0",
+    "join-monster": "^2.0.4",
+    "join-monster-graphql-tools-adapter": "0.0.2",
     "mysql2": "^1.4.0",
     "sequelize": "^4.4.2"
   },
